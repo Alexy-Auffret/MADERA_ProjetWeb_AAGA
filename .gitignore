@@ -50,3 +50,8 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/codeStyles/codeStyleConfig.xml
+/.idea/modules.xml
+/.idea/MADERA_ProjetWeb_AAGA.iml

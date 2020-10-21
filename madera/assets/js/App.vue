@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="success">
-      <img :src="'img/logo_madera.png'" alt="#" style="width: 20%">
+      <img :src="'/img/logo_madera.png'" alt="#" style="width: 20%">
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>

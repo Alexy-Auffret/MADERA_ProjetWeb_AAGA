@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit FamilleComposants{% endblock %}
+
+{% block body %}
+    <h1>Edit FamilleComposants</h1>
+
+    {{ include('famille_composants/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('famille_composants_index') }}">back to list</a>
+
+    {{ include('famille_composants/_delete_form.html.twig') }}
+{% endblock %}

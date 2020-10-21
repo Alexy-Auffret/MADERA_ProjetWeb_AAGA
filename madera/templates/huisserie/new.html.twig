@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Huisserie{% endblock %}
+
+{% block body %}
+    <h1>Create new Huisserie</h1>
+
+    {{ include('huisserie/_form.html.twig') }}
+
+    <a href="{{ path('huisserie_index') }}">back to list</a>
+{% endblock %}

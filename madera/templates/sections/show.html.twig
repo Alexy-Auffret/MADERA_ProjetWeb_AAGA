@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sections{% endblock %}
+
+{% block body %}
+    <h1>Sections</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ section.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle_section</th>
+                <td>{{ section.libelleSection }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('sections_index') }}">back to list</a>
+
+    <a href="{{ path('sections_edit', {'id': section.id}) }}">edit</a>
+
+    {{ include('sections/_delete_form.html.twig') }}
+{% endblock %}

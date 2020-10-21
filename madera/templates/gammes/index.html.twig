@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gammes index{% endblock %}
+
+{% block body %}
+    <h1>Gammes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle_gamme</th>
+                <th>Finition_exterieur</th>
+                <th>Type_isolant</th>
+                <th>Type_couverture</th>
+                <th>Qualite_huisserie</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gamme in gammes %}
+            <tr>
+                <td>{{ gamme.id }}</td>
+                <td>{{ gamme.libelleGamme }}</td>
+                <td>{{ gamme.finitionExterieur }}</td>
+                <td>{{ gamme.typeIsolant }}</td>
+                <td>{{ gamme.typeCouverture }}</td>
+                <td>{{ gamme.qualiteHuisserie }}</td>
+                <td>
+                    <a href="{{ path('gammes_show', {'id': gamme.id}) }}">show</a>
+                    <a href="{{ path('gammes_edit', {'id': gamme.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('gammes_new') }}">Create new</a>
+{% endblock %}

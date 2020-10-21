@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Montants index{% endblock %}
+
+{% block body %}
+    <h1>Montants index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle_montant</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for montant in montants %}
+            <tr>
+                <td>{{ montant.id }}</td>
+                <td>{{ montant.libelleMontant }}</td>
+                <td>
+                    <a href="{{ path('montants_show', {'id': montant.id}) }}">show</a>
+                    <a href="{{ path('montants_edit', {'id': montant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('montants_new') }}">Create new</a>
+{% endblock %}

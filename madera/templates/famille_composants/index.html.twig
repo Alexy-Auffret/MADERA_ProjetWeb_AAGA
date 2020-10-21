@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FamilleComposants index{% endblock %}
+
+{% block body %}
+    <h1>FamilleComposants index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libelle_famille_composants</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for famille_composant in famille_composants %}
+            <tr>
+                <td>{{ famille_composant.id }}</td>
+                <td>{{ famille_composant.libelleFamilleComposants }}</td>
+                <td>
+                    <a href="{{ path('famille_composants_show', {'id': famille_composant.id}) }}">show</a>
+                    <a href="{{ path('famille_composants_edit', {'id': famille_composant.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('famille_composants_new') }}">Create new</a>
+{% endblock %}

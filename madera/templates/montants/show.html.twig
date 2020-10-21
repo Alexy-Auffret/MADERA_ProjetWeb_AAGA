@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Montants{% endblock %}
+
+{% block body %}
+    <h1>Montants</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ montant.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle_montant</th>
+                <td>{{ montant.libelleMontant }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('montants_index') }}">back to list</a>
+
+    <a href="{{ path('montants_edit', {'id': montant.id}) }}">edit</a>
+
+    {{ include('montants/_delete_form.html.twig') }}
+{% endblock %}

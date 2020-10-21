@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Gammes{% endblock %}
+
+{% block body %}
+    <h1>Create new Gammes</h1>
+
+    {{ include('gammes/_form.html.twig') }}
+
+    <a href="{{ path('gammes_index') }}">back to list</a>
+{% endblock %}

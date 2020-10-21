@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gammes{% endblock %}
+
+{% block body %}
+    <h1>Gammes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ gamme.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle_gamme</th>
+                <td>{{ gamme.libelleGamme }}</td>
+            </tr>
+            <tr>
+                <th>Finition_exterieur</th>
+                <td>{{ gamme.finitionExterieur }}</td>
+            </tr>
+            <tr>
+                <th>Type_isolant</th>
+                <td>{{ gamme.typeIsolant }}</td>
+            </tr>
+            <tr>
+                <th>Type_couverture</th>
+                <td>{{ gamme.typeCouverture }}</td>
+            </tr>
+            <tr>
+                <th>Qualite_huisserie</th>
+                <td>{{ gamme.qualiteHuisserie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('gammes_index') }}">back to list</a>
+
+    <a href="{{ path('gammes_edit', {'id': gamme.id}) }}">edit</a>
+
+    {{ include('gammes/_delete_form.html.twig') }}
+{% endblock %}

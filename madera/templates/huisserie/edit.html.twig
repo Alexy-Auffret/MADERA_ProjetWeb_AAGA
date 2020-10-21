@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Huisserie{% endblock %}
+
+{% block body %}
+    <h1>Edit Huisserie</h1>
+
+    {{ include('huisserie/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('huisserie_index') }}">back to list</a>
+
+    {{ include('huisserie/_delete_form.html.twig') }}
+{% endblock %}

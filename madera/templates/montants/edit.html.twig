@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Montants{% endblock %}
+
+{% block body %}
+    <h1>Edit Montants</h1>
+
+    {{ include('montants/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('montants_index') }}">back to list</a>
+
+    {{ include('montants/_delete_form.html.twig') }}
+{% endblock %}

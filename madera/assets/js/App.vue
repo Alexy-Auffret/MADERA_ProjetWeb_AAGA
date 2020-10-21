@@ -6,13 +6,13 @@
 
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-          <b-nav-item :href="'login'">Modules</b-nav-item>
-          <b-nav-item :href="'Gammes'" >Gammes</b-nav-item>
-          <b-nav-item :href="'Huisseries'" >Huisseries</b-nav-item>
-          <b-nav-item :href="'Montants'" >Montants</b-nav-item>
-          <b-nav-item :href="'Sections'" >Sections</b-nav-item>
-          <b-nav-item :href="'Composants'" >Composants</b-nav-item>
-          <b-nav-item :href="'Fournisseurs'" >Fournisseurs</b-nav-item>
+          <b-nav-item href='/modules'>Modules</b-nav-item>
+          <b-nav-item href="/gammes" replace >Gammes</b-nav-item>
+          <b-nav-item href="/huisserie" >Huisseries</b-nav-item>
+          <b-nav-item href="/montants" >Montants</b-nav-item>
+          <b-nav-item href="/sections" >Sections</b-nav-item>
+          <b-nav-item href="/composants" >Composants</b-nav-item>
+          <b-nav-item href="/fournisseurs" >Fournisseurs</b-nav-item>
         </b-navbar-nav>
 
       </b-collapse>

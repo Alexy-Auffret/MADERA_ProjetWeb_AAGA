@@ -1,0 +1,9 @@
+{{ form_start(form) }}
+    <div class="card-body">
+        {{ form_widget(form) }}
+    </div>
+    <div class="card-footer">
+        <button class="d-inline-block btn btn-success">{{ button_label|default('Save') }}</button>
+        <a class="d-inline-block btn btn-danger" href="{{ path('fournisseurs_index') }}">back to list</a>
+    </div>
+{{ form_end(form) }}

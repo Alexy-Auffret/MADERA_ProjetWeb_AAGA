@@ -19,50 +19,50 @@ class FournisseursType extends AbstractType
             ->add('raison_sociale', TextType::Class,[
                 'attr' => [
                     'placeholder' => "Raison Sociale",
-                    'class' => 'form-control',
+                    'class' => 'form-control mt-2',
                     'width' => '10%'
                 ]
             ])
             ->add('num_tel', NumberType::Class, [
                 'attr' => [
                     'placeholder' => "Numéro de téléphone",
-                    'class' => 'form-control'
+                    'class' => 'form-control mt-2'
                 ]
             ])
             ->add('contact_nom_complet', TextType::Class,[
                 'attr' => [
                     'placeholder' => "Nom complet du contact",
-                    'class' => 'form-control'
+                    'class' => 'form-control mt-2'
                 ]
             ])
             ->add('mail', TextType::Class,[
                 'attr' => [
                     'placeholder' => "Adresse mail",
-                    'class' => 'form-control'
+                    'class' => 'form-control mt-2'
                 ]
             ])
             ->add('rue', TextType::Class,[
                 'attr' => [
                     'placeholder' => "Rue",
-                    'class' => 'form-control'
+                    'class' => 'form-control mt-2'
                 ]
             ])
             ->add('cp', TextType::Class,[
                 'attr' => [
-                    'placeholder' => "Adresse mail",
-                    'class' => 'form-control'
+                    'placeholder' => "Code Postale",
+                    'class' => 'form-control mt-2'
                 ]
             ])
             ->add('ville', TextType::Class,[
                 'attr' => [
-                    'placeholder' => "Adresse mail",
-                    'class' => 'form-control'
+                    'placeholder' => "Ville",
+                    'class' => 'form-control mt-2'
                 ]
             ])
             ->add('pays', TextType::Class,[
                 'attr' => [
-                    'placeholder' => "Adresse mail",
-                    'class' => 'form-control'
+                    'placeholder' => "Pays",
+                    'class' => 'form-control mt-2'
                 ]
             ])
         ;

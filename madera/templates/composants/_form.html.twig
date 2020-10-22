@@ -1,4 +1,14 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="card-body">
+        {{ form_row(form.libelle_composant, {'label':false}) }}
+        {{ form_row(form.caracteristique, {'label':false}) }}
+        {{ form_row(form.unite_usage, {'label':false}) }}
+        {{ form_row(form.prix_base, {'label':false}) }}
+        {{ form_row(form.fournisseur, {'label':false}) }}
+        {{ form_row(form.famille, {'label':false}) }}
+    </div>
+    <div class="card-footer bg-perso">
+        <button class="d-inline-block btn btn-success"><i class="fas fa-check"></i> {{ button_label|default('Créer') }}</button>
+        <a class="d-inline-block btn btn-secondary ml-3" href="{{ path('composants_index') }}"><i class="fas fa-arrow-left"></i> Retour</a>
+    </div>
 {{ form_end(form) }}

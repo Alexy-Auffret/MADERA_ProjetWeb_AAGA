@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="row">
-    <div class="card col-md-10 offset-1 mt-3 p-0">
+    <div class="card col-md-8 offset-2 mt-3 p-0">
         <div class="card-header bg-perso text-white">
             <h1>Composants index</h1>
         </div>
@@ -12,11 +12,11 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Libelle_composant</th>
+                        <th>Libellé composant</th>
                         <th>Caracteristique</th>
-                        <th>Unite_usage</th>
-                        <th>Prix_base</th>
-                        <th>actions</th>
+                        <th>Unité d'usage</th>
+                        <th>Prix de base</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,8 +27,8 @@
                         <td>{{ composant.uniteUsage }}</td>
                         <td>{{ composant.prixBase }}</td>
                         <td>
-                            <a href="{{ path('composants_show', {'id': composant.id}) }}"><i class="fas fa-eye"></i>show</a>
-                            <a href="{{ path('composants_edit', {'id': composant.id}) }}">edit</a>
+                            <a class="fas fa-eye" href="{{ path('composants_show', {'id': composant.id}) }}"> </a>
+                            <a class="fas fa-edit text-warning" href="{{ path('composants_edit', {'id': composant.id}) }}"></a>
                         </td>
                     </tr>
                 {% else %}
@@ -39,7 +39,7 @@
                 </tbody>
             </table>
         </div>
-
-
-    <a href="{{ path('composants_new') }}">Create new</a>
-{% endblock %}
+        <div class="card-footer bg-perso">
+            <a class="btn btn-success" href="{{ path('composants_new') }}"><i class="fas fa-plus" ></i> Ajouter un composant</a>
+        </div>
+        {% endblock %}

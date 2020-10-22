@@ -3,36 +3,35 @@
 {% block title %}Composants{% endblock %}
 
 {% block body %}
-    <h1>Composants</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ composant.id }}</td>
-            </tr>
-            <tr>
-                <th>Libelle_composant</th>
-                <td>{{ composant.libelleComposant }}</td>
-            </tr>
-            <tr>
-                <th>Caracteristique</th>
-                <td>{{ composant.caracteristique }}</td>
-            </tr>
-            <tr>
-                <th>Unite_usage</th>
-                <td>{{ composant.uniteUsage }}</td>
-            </tr>
-            <tr>
-                <th>Prix_base</th>
-                <td>{{ composant.prixBase }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <a href="{{ path('composants_index') }}">back to list</a>
-
-    <a href="{{ path('composants_edit', {'id': composant.id}) }}">edit</a>
-
-    {{ include('composants/_delete_form.html.twig') }}
+<div class="col-md-8 offset-2 card mt-2 p-0" >
+    <div class="card-header bg-perso text-white">
+        <h1>Composants</h1>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Libellé composant</th>
+                    <td>{{ composant.libelleComposant }}</td>
+                </tr>
+                <tr>
+                    <th>Caracteristique</th>
+                    <td>{{ composant.caracteristique }}</td>
+                </tr>
+                <tr>
+                    <th>Unité d'usage</th>
+                    <td>{{ composant.uniteUsage }}</td>
+                </tr>
+                <tr>
+                    <th>Prix de base</th>
+                    <td>{{ composant.prixBase }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer bg-perso">
+        <a class="d-inline-block btn btn-secondary ml-3" href="{{ path('composants_index') }}"><i class="fas fa-arrow-left"></i> Retour</a>
+        <a class="d-inline-block btn btn-success ml-3" href="{{ path('composants_edit', {'id': composant.id}) }}"><i class="fas fa-edit"></i> Modifier</a>
+        <a class="d-inline-block">{{ include('composants/_delete_form.html.twig') }}</a>
+    </div>
 {% endblock %}

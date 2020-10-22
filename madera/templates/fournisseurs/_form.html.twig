@@ -1,6 +1,15 @@
 {{ form_start(form) }}
     <div class="card-body">
-        {{ form_widget(form) }}
+        <h2>Informations fournisseur</h2>
+        {{ form_row(form.raison_sociale, {'label':false}) }}
+        {{ form_row(form.num_tel, {'label':false}) }}
+        {{ form_row(form.contact_nom_complet, {'label':false}) }}
+        {{ form_row(form.mail, {'label':false}) }}
+        <h2>Adresse</h2>
+        {{ form_row(form.rue, {'label':false}) }}
+        {{ form_row(form.cp, {'label':false}) }}
+        {{ form_row(form.ville, {'label':false}) }}
+        {{ form_row(form.pays, {'label':false}) }}
     </div>
     <div class="card-footer bg-perso">
         <button class="d-inline-block btn btn-success"><i class="fas fa-check"></i> {{ button_label|default('Save') }}</button>

@@ -12,15 +12,13 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Libelle_section</th>
-                        <th>actions</th>
+                        <th>Libellé section</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                 {% for section in sections %}
                     <tr>
-                        <td>{{ section.id }}</td>
                         <td>{{ section.libelleSection }}</td>
                         <td>
                             <a class="fas fa-eye " href="{{ path('sections_show', {'id': section.id}) }}"></a>

@@ -20,11 +20,11 @@ class ClientsType extends AbstractType
                 ]
             ])
             ->add('prenom_client', TextType::class, [
-        'attr' => [
-            'placeholder' => "Prenom",
-            'class' => 'form-control mt-2',
-        ]
-    ])
+                'attr' => [
+                'placeholder' => "Prenom",
+                'class' => 'form-control mt-2',
+                ]
+            ])
             ->add('num_tel_client', TextType::class, [
                 'attr' => [
                     'placeholder' => "Numéro de téléphone",

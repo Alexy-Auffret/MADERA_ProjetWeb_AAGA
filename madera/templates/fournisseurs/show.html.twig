@@ -4,39 +4,56 @@
 
 {% block body %}
 <div class="container">
-    <div class="col-md-12 card mt-2 p-0" >
+    <div class="col-md-8 offset-2 card mt-2 p-0" >
         <div class="card-header bg-perso text-white">
-            <h1 class="d-inline-flex col-md-10">Fournisseurs</h1>
+            <h1 class="d-inline-flex col-md-10">Fournisseurs {{ fournisseur.raisonSociale }}</h1>
         </div>
         <div class="card-body">
             <table class="table">
                 <tbody>
                     <tr>
-                        <th>Id</th>
-                        <td>{{ fournisseur.id }}</td>
+                        <th><h2>Informations fourniseur</h2></th>
+                        <td></td>
                     </tr>
                     <tr>
-                        <th>Raison_sociale</th>
+                        <th>Raison sociale :</th>
                         <td>{{ fournisseur.raisonSociale }}</td>
                     </tr>
                     <tr>
-                        <th>Num_tel</th>
+                        <th>Num Téléphone :</th>
                         <td>{{ fournisseur.numTel }}</td>
                     </tr>
                     <tr>
-                        <th>Contact_nom_complet</th>
+                        <th>Nom du contact :</th>
                         <td>{{ fournisseur.contactNomComplet }}</td>
                     </tr>
                     <tr>
-                        <th>Mail</th>
+                        <th><h2>Adresse fourniseur</h2></th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Rue :</th>
+                        <td>{{ fournisseur.rue }}</td>
+                    </tr>
+                    <tr>
+                        <th>Code postale :</th>
                         <td>{{ fournisseur.mail }}</td>
                     </tr>
+                    <tr>
+                        <th>Ville :</th>
+                        <td>{{ fournisseur.mail }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pays :</th>
+                        <td>{{ fournisseur.mail }}</td>
+                    </tr>
+
                 </tbody>
             </table>
         </div>
         <div class="card-footer bg-perso">
             <a class="d-inline-block btn btn-secondary ml-3" href="{{ path('fournisseurs_index') }}"><i class="fas fa-arrow-left"></i> Retour</a>
-            <a class="d-inline-block btn btn-warning ml-3" href="{{ path('fournisseurs_edit', {'id': fournisseur.id}) }}"><i class="fas fa-edit"></i> Modifier</a>
+            <a class="d-inline-block btn btn-success ml-3" href="{{ path('fournisseurs_edit', {'id': fournisseur.id}) }}"><i class="fas fa-edit"></i> Modifier</a>
             <a class="d-inline-block">{{ include('fournisseurs/_delete_form.html.twig') }}</a>
         </div>
 {% endblock %}

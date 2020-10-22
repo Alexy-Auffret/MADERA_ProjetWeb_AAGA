@@ -40,15 +40,29 @@ class Fournisseurs
     private $mail;
 
     /**
-     * @ORM\OneToOne(targetEntity=Adresses::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $adresse;
-
-    /**
      * @ORM\OneToMany(targetEntity=Composants::class, mappedBy="fournisseur")
      */
     private $composant;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $rue;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $cp;
+
+    /**
+     * @ORM\Column(type="string", length=150)
+     */
+    private $ville;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $pays;
 
     public function __construct()
     {
@@ -108,18 +122,6 @@ class Fournisseurs
         return $this;
     }
 
-    public function getAdresse(): ?Adresses
-    {
-        return $this->adresse;
-    }
-
-    public function setAdresse(Adresses $adresse): self
-    {
-        $this->adresse = $adresse;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Composants[]
      */
@@ -147,6 +149,54 @@ class Fournisseurs
                 $composant->setFournisseur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getRue(): ?string
+    {
+        return $this->rue;
+    }
+
+    public function setRue(string $rue): self
+    {
+        $this->rue = $rue;
+
+        return $this;
+    }
+
+    public function getCp(): ?int
+    {
+        return $this->cp;
+    }
+
+    public function setCp(int $cp): self
+    {
+        $this->cp = $cp;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(string $ville): self
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
+    public function getPays(): ?string
+    {
+        return $this->pays;
+    }
+
+    public function setPays(string $pays): self
+    {
+        $this->pays = $pays;
 
         return $this;
     }

@@ -6,6 +6,7 @@ use App\Entity\Adresses;
 use App\Entity\Fournisseurs;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -21,7 +22,7 @@ class FournisseursType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('num_tel', TextType::Class, [
+            ->add('num_tel', NumberType::Class, [
                 'attr' => [
                     'placeholder' => "Numéro de téléphone",
                     'class' => 'form-control'
@@ -39,10 +40,30 @@ class FournisseursType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('adresse', EntityType::Class, array(
-                'class' => Adresses::class,
-                'choice_label' => 'rue',
-            ))
+            ->add('rue', TextType::Class,[
+                'attr' => [
+                    'placeholder' => "Rue",
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('cp', TextType::Class,[
+                'attr' => [
+                    'placeholder' => "Adresse mail",
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('ville', TextType::Class,[
+                'attr' => [
+                    'placeholder' => "Adresse mail",
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('pays', TextType::Class,[
+                'attr' => [
+                    'placeholder' => "Adresse mail",
+                    'class' => 'form-control'
+                ]
+            ])
         ;
     }
 

@@ -6,6 +6,7 @@ use App\Entity\Adresses;
 use App\Entity\Fournisseurs;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,10 +19,11 @@ class FournisseursType extends AbstractType
             ->add('raison_sociale', TextType::Class,[
                 'attr' => [
                     'placeholder' => "Raison Sociale",
-                    'class' => 'form-control'
+                    'class' => 'form-control',
+                    'width' => '10%'
                 ]
             ])
-            ->add('num_tel', TextType::Class, [
+            ->add('num_tel', NumberType::Class, [
                 'attr' => [
                     'placeholder' => "Numéro de téléphone",
                     'class' => 'form-control'

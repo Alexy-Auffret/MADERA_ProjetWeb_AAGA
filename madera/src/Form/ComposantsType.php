@@ -3,9 +3,14 @@
 namespace App\Form;
 
 use App\Entity\Composants;
+use App\Entity\Fournisseurs;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class ComposantsType extends AbstractType
 {
@@ -16,7 +21,10 @@ class ComposantsType extends AbstractType
             ->add('caracteristique')
             ->add('unite_usage')
             ->add('prix_base')
-            ->add('fournisseur')
+            ->add('fournisseur', EntityType::Class, array(
+                'class'=> Fournisseurs::class,
+                'choice_label' =>'raison_sociale'
+            ))
             ->add('famille')
             ->add('Sections')
             ->add('montants')

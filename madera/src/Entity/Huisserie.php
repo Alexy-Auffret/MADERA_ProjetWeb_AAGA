@@ -39,14 +39,14 @@ class Huisserie
         return $this->id;
     }
 
-    public function getLibelleMontant(): ?string
+    public function getLibelleHuisserie(): ?string
     {
-        return $this->libelle_montant;
+        return $this->libelle_huisserie;
     }
 
-    public function setLibelleMontant(string $libelle_montant): self
+    public function setLibelleHuisserie(string $libelle_huisserie): self
     {
-        $this->libelle_montant = $libelle_montant;
+        $this->libelle_huisserie = $libelle_huisserie;
 
         return $this;
     }

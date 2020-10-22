@@ -3,11 +3,12 @@
 {% block title %}Edit Huisserie{% endblock %}
 
 {% block body %}
-    <h1>Edit Huisserie</h1>
-
-    {{ include('huisserie/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('huisserie_index') }}">back to list</a>
-
-    {{ include('huisserie/_delete_form.html.twig') }}
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col-md-8 offset-2 mt-3 p-0">
+            <h1 class="card-header bg-perso text-white">Modifier Huisserie</h1>
+            {{ include('huisserie/_form.html.twig', {'button_label': 'Update'}) }}
+        </div>
+    </div>
+</div>
 {% endblock %}

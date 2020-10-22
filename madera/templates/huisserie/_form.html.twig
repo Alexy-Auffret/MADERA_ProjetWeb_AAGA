@@ -1,4 +1,9 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    <div class="card-body">
+        {{ form_row(form.libelle_huisserie, {'label':false}) }}
+    </div>
+    <div class="card-footer bg-perso">
+        <button class="btn btn-success"><i class="fas fa-check"></i> {{ button_label|default('Enregistrer') }}</button>
+        <a class="btn btn-secondary" href="{{ path('huisserie_index') }}"> <i class="fas fa-arrow-left"></i> Retour</a>
+    </div>
 {{ form_end(form) }}

@@ -3,33 +3,41 @@
 {% block title %}Huisserie index{% endblock %}
 
 {% block body %}
-    <h1>Huisserie index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Libelle_huisserie</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for huisserie in huisseries %}
-            <tr>
-                <td>{{ huisserie.id }}</td>
-                <td>{{ huisserie.libelleHuisserie }}</td>
-                <td>
-                    <a href="{{ path('huisserie_show', {'id': huisserie.id}) }}">show</a>
-                    <a href="{{ path('huisserie_edit', {'id': huisserie.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('huisserie_new') }}">Create new</a>
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col-md-10 offset-1 mt-3 p-0">
+            <div class="card-header bg-perso text-white">
+                <h1>Liste des Huisseries</h1>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Libelle de l'huisserie</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for huisserie in huisseries %}
+                        <tr>
+                            <td>{{ huisserie.libelleHuisserie }}</td>
+                            <td>
+                                <a class="fas fa-eye text-primary" href="{{ path('huisserie_show', {'id': huisserie.id}) }}"></a>
+                                <a class="fas fa-edit text-warning" href="{{ path('huisserie_edit', {'id': huisserie.id}) }}"></a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="3">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer bg-perso">
+                <a class="btn btn-success" href="huisserie_new"> <i class="fas fa-plus text-white"></i> Ajouter une Huisserie</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -5,47 +5,47 @@
 {% block body %}
     <div class="container-fluid">
         <div class="row">
-        <div class="card col-md-10 offset-1 mt-3 p-0">
-            <div class="card-header bg-perso">
-                <h1>Liste des Clients</h1>
+            <div class="card col-md-10 offset-1 mt-3 p-0">
+                <div class="card-header bg-perso text-white">
+                    <h1>Liste des Clients</h1>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Nom_client</th>
+                                <th>Prenom_client</th>
+                                <th>Num_tel_client</th>
+                                <th>Mail_client</th>
+                                <th>Adresse</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for client in clients %}
+                            <tr>
+                                <td>{{ client.nomClient }}</td>
+                                <td>{{ client.prenomClient }}</td>
+                                <td>{{ client.numTelClient }}</td>
+                                <td>{{ client.mailClient }}</td>
+                                <td>{{ client.rue}} {{ client.cp }} {{ client.ville }} {{ client.pays }}</td>
+                                <td>
+                                    <a class="fas fa-eye text-primary" href="{{ path('clients_show', {'id': client.id}) }}"></a>
+                                    <a class="fas fa-edit text-warning" href="{{ path('clients_edit', {'id': client.id}) }}"></a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="6">Pas de client d'enregistré</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer bg-perso">
+                    <a class="btn btn-success" href="{{ path('clients_new') }}"> <i class="fas fa-plus text-white"></i> Ajouter un Client</a>
+                </div>
             </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Nom_client</th>
-                            <th>Prenom_client</th>
-                            <th>Num_tel_client</th>
-                            <th>Mail_client</th>
-                            <th>Adresse</th>
-                            <th>actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for client in clients %}
-                        <tr>
-                            <td>{{ client.nomClient }}</td>
-                            <td>{{ client.prenomClient }}</td>
-                            <td>{{ client.numTelClient }}</td>
-                            <td>{{ client.mailClient }}</td>
-                            <td>{{ client.rue}} {{ client.cp }} {{ client.ville }} {{ client.pays }}</td>
-                            <td>
-                                <a class="fas fa-eye text-primary" href="{{ path('clients_show', {'id': client.id}) }}"></a>
-                                <a class="fas fa-edit text-warning" href="{{ path('clients_edit', {'id': client.id}) }}"></a>
-                            </td>
-                        </tr>
-                    {% else %}
-                        <tr>
-                            <td colspan="6">no records found</td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-footer">
-            <a class="btn btn-success" href="{{ path('clients_new') }}"> <i class="fas fa-plus text-white"></i> Ajouter un Client</a>
-            </div>
-        </div>
         </div>
     </div>
 {% endblock %}

@@ -3,36 +3,65 @@
 {% block title %}Clients{% endblock %}
 
 {% block body %}
-    <h1>Clients</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col-md-8 offset-2 mt-3 p-0">
+            <h1 class="card-header bg-perso text-white">Fiche client {{ client.nomClient }} {{ client.prenomClient }}</h1>
+            <div class="card-body">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th><h2>Informations client</h2></th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Nom : </th>
+                        <td>{{ client.nomClient }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prenom :</th>
+                        <td>{{ client.prenomClient }}</td>
+                    </tr>
+                    <tr>
+                        <th>Numéro de téléphone :</th>
+                        <td>{{ client.numTelClient }}</td>
+                    </tr>
+                    <tr>
+                        <th>Adresse mail : </th>
+                        <td>{{ client.mailClient }}</td>
+                    </tr>
+                    <tr>
+                        <th><h2>Adresse client</h2></th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>Rue : </th>
+                        <td>{{ client.rue }}</td>
+                    </tr>
+                    <tr>
+                        <th>Code postale : </th>
+                        <td>{{ client.cp }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ville : </th>
+                        <td>{{ client.ville }}</td>
+                    </tr>
+                    <tr>
+                        <th>Pays : </th>
+                        <td>{{ client.pays }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer bg-perso">
+                <a class="btn btn-secondary" href="{{ path('clients_index') }}"> <i class="fas fa-arrow-left"></i> Retour</a>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ client.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom_client</th>
-                <td>{{ client.nomClient }}</td>
-            </tr>
-            <tr>
-                <th>Prenom_client</th>
-                <td>{{ client.prenomClient }}</td>
-            </tr>
-            <tr>
-                <th>Num_tel_client</th>
-                <td>{{ client.numTelClient }}</td>
-            </tr>
-            <tr>
-                <th>Mail_client</th>
-                <td>{{ client.mailClient }}</td>
-            </tr>
-        </tbody>
-    </table>
+                <a class="btn btn-success ml-3 mr-3" href="{{ path('clients_edit', {'id': client.id}) }}"><i class="fas fa-edit "></i> Editer</a>
 
-    <a href="{{ path('clients_index') }}">back to list</a>
+                {{ include('clients/_delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+</div>
 
-    <a href="{{ path('clients_edit', {'id': client.id}) }}">edit</a>
-
-    {{ include('clients/_delete_form.html.twig') }}
 {% endblock %}

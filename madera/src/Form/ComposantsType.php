@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Composants;
+use App\Entity\FamilleComposants;
 use App\Entity\Fournisseurs;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -25,7 +26,10 @@ class ComposantsType extends AbstractType
                 'class'=> Fournisseurs::class,
                 'choice_label' =>'raison_sociale'
             ))
-            ->add('famille')
+            ->add('famille',EntityType::Class, array(
+                'class'=>FamilleComposants::class,
+                'choice_label' => 'libelle_famille_composants'
+            ))
             ->add('Sections')
             ->add('montants')
         ;

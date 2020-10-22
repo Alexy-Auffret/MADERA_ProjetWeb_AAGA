@@ -16,49 +16,50 @@ class ClientsType extends AbstractType
             ->add('nom_client', TextType::class, [
                 'attr' => [
                     'placeholder' => "Nom",
-                    'class' => 'form-control',
+                    'class' => 'form-control mt-2',
                 ]
             ])
             ->add('prenom_client', TextType::class, [
         'attr' => [
             'placeholder' => "Prenom",
-            'class' => 'form-control',
+            'class' => 'form-control mt-2',
         ]
     ])
             ->add('num_tel_client', TextType::class, [
                 'attr' => [
                     'placeholder' => "Numéro de téléphone",
-                    'class' => 'form-control',
+                    'class' => 'form-control mt-2',
                 ]
             ])
             ->add('mail_client', TextType::class, [
                 'attr' => [
                     'placeholder' => "Adresse mail",
-                    'class' => 'form-control',
+                    'class' => 'form-control mt-2',
                 ]
             ])
             ->add('rue', TextType::class, [
                 'attr' => [
                     'placeholder' => "Rue",
-                    'class' => 'form-control',
+                    'class' => 'form-control mt-2',
                 ]
             ])
             ->add('cp', TextType::class, [
                 'attr' => [
                     'placeholder' => "Code postale",
-                    'class' => 'form-control',
+                    'class' => 'form-control mt-2',
                 ]
             ])
             ->add('ville', TextType::class, [
                 'attr' => [
                     'placeholder' => "Ville",
-                    'class' => 'form-control',
+                    'class' => 'form-control mt-2',
+
                 ]
             ])
             ->add('pays', TextType::class, [
                 'attr' => [
                     'placeholder' => "Pays",
-                    'class' => 'form-control',
+                    'class' => 'form-control mt-2',
                 ]
             ])
         ;

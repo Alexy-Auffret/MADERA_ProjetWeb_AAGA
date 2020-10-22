@@ -3,11 +3,12 @@
 {% block title %}Edit Gammes{% endblock %}
 
 {% block body %}
-    <h1>Edit Gammes</h1>
-
-    {{ include('gammes/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('gammes_index') }}">back to list</a>
-
-    {{ include('gammes/_delete_form.html.twig') }}
+<div class="container-fluid">
+    <div class="row">
+        <div class="card col-md-8 offset-2 mt-3 p-0">
+            <h1 class="card-header bg-perso text-white">Modifier Gamme</h1>
+            {{ include('gammes/_form.html.twig', {'button_label': 'Update'}) }}
+        </div>
+    </div>
+</div>
 {% endblock %}

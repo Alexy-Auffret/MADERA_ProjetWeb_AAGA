@@ -3,9 +3,12 @@
 {% block title %}New Gammes{% endblock %}
 
 {% block body %}
-    <h1>Create new Gammes</h1>
-
-    {{ include('gammes/_form.html.twig') }}
-
-    <a href="{{ path('gammes_index') }}">back to list</a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card col-md-8 offset-2 mt-3 p-0">
+                <h1 class="card-header bg-perso text-white">Créer une Gamme</h1>
+                {{ include('gammes/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

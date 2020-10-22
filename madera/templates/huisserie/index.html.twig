@@ -28,14 +28,14 @@
                         </tr>
                     {% else %}
                         <tr>
-                            <td colspan="3">no records found</td>
+                            <td colspan="3">Pas d'huisserie enregistré</td>
                         </tr>
                     {% endfor %}
                     </tbody>
                 </table>
             </div>
             <div class="card-footer bg-perso">
-                <a class="btn btn-success" href="huisserie_new"> <i class="fas fa-plus text-white"></i> Ajouter une Huisserie</a>
+                <a class="btn btn-success" href="{{ path(huisserie_new) }}"> <i class="fas fa-plus text-white"></i> Ajouter une Huisserie</a>
             </div>
         </div>
     </div>

@@ -3,39 +3,49 @@
 {% block title %}Clients index{% endblock %}
 
 {% block body %}
-    <h1>Clients index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom_client</th>
-                <th>Prenom_client</th>
-                <th>Num_tel_client</th>
-                <th>Mail_client</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for client in clients %}
-            <tr>
-                <td>{{ client.id }}</td>
-                <td>{{ client.nomClient }}</td>
-                <td>{{ client.prenomClient }}</td>
-                <td>{{ client.numTelClient }}</td>
-                <td>{{ client.mailClient }}</td>
-                <td>
-                    <a href="{{ path('clients_show', {'id': client.id}) }}">show</a>
-                    <a href="{{ path('clients_edit', {'id': client.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('clients_new') }}">Create new</a>
+    <div class="container-fluid">
+        <div class="row">
+        <div class="card col-md-10 offset-1 mt-3 p-0">
+            <div class="card-header">
+                <h1>Liste des Clients</h1>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nom_client</th>
+                            <th>Prenom_client</th>
+                            <th>Num_tel_client</th>
+                            <th>Mail_client</th>
+                            <th>actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for client in clients %}
+                        <tr>
+                            <td>{{ client.id }}</td>
+                            <td>{{ client.nomClient }}</td>
+                            <td>{{ client.prenomClient }}</td>
+                            <td>{{ client.numTelClient }}</td>
+                            <td>{{ client.mailClient }}</td>
+                            <td>
+                                <a class="fas fa-eye text-primary" href="{{ path('clients_show', {'id': client.id}) }}"></a>
+                                <a class="fas fa-edit text-success" href="{{ path('clients_edit', {'id': client.id}) }}"></a>
+                            </td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="6">no records found</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer">
+            <a class="btn btn-success fas" href="{{ path('clients_new') }}"> Ajouter un Client</a>
+            </div>
+        </div>
+        </div>
+    </div>
 {% endblock %}

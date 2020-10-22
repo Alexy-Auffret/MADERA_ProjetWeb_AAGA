@@ -41,10 +41,30 @@ class FournisseursType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('adresse', EntityType::Class, array(
-                'class' => Adresses::class,
-                'choice_label' => 'rue',
-            ))
+            ->add('rue', TextType::Class,[
+                'attr' => [
+                    'placeholder' => "Rue",
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('cp', TextType::Class,[
+                'attr' => [
+                    'placeholder' => "Adresse mail",
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('ville', TextType::Class,[
+                'attr' => [
+                    'placeholder' => "Adresse mail",
+                    'class' => 'form-control'
+                ]
+            ])
+            ->add('pays', TextType::Class,[
+                'attr' => [
+                    'placeholder' => "Adresse mail",
+                    'class' => 'form-control'
+                ]
+            ])
         ;
     }
 

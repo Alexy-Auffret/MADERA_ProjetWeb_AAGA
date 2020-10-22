@@ -3,9 +3,12 @@
 {% block title %}New Modules{% endblock %}
 
 {% block body %}
-    <h1>Create new Modules</h1>
-
-    {{ include('modules/_form.html.twig') }}
-
-    <a href="{{ path('modules_index') }}">back to list</a>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card col-md-8 offset-2 mt-3 p-0">
+                <h1 class="card-header bg-perso text-white">Créer un Module</h1>
+                {{ include('modules/_form.html.twig') }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -7,6 +7,7 @@ use App\Entity\Huisserie;
 use App\Entity\Modules;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -17,51 +18,69 @@ class ModulesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('libelle_module', TextType::class, [
+            ->add('Gammes', EntityType::class, [
+                'class' => Gammes::class,
+                'choice_label' => 'libelle_gamme',
+                'placeholder' => 'Choisir une gamme',
+                'label' => false,
                 'attr' => [
-                    'placeholder' => "Libellé de la gamme",
+                    'class' => 'form-control mt-2',
+                ]
+            ])
+            ->add('libelle_module', TextType::class, [
+                'label' => false,
+                'attr' => [
+                    'placeholder' => "Libellé du module",
                     'class' => 'form-control mt-2',
                 ]
             ])
             ->add('hauteur_module', TextType::class, [
+                'label' => false,
                 'attr' => [
-                    'placeholder' => "Libellé de la gamme",
+                    'placeholder' => "Hauteur du module",
                     'class' => 'form-control mt-2',
                 ]
             ])
             ->add('longueur_module', TextType::class, [
+                'label' => false,
                 'attr' => [
-                    'placeholder' => "Libellé de la gamme",
+                    'placeholder' => "Longueur du module",
                     'class' => 'form-control mt-2',
                 ]
             ])
             ->add('plan_coupe', TextType::class, [
+                'label' => false,
                 'attr' => [
-                    'placeholder' => "Libellé de la gamme",
+                    'placeholder' => "Type de plan de coupe (ex:A:A)",
                     'class' => 'form-control mt-2',
                 ]
             ])
             ->add('parametre_prix', TextType::class, [
+                'label' => false,
                 'attr' => [
-                    'placeholder' => "Libellé de la gamme",
+                    'placeholder' => "% à appliquer au prix de base",
                     'class' => 'form-control mt-2',
                 ]
             ])
             ->add('cctp', TextType::class, [
+                'label' => false,
                 'attr' => [
-                    'placeholder' => "Libellé de la gamme",
+                    'placeholder' => "CCTP (type de dalle ou plots)",
                     'class' => 'form-control mt-2',
                 ]
             ])
-            ->add('is_modele', TextType::class, [
+            ->add('is_modele', CheckboxType::class, [
+                'label' => "Est un Modèle : ",
+                'required' => false,
+
                 'attr' => [
-                    'placeholder' => "Libellé de la gamme",
-                    'class' => 'form-control mt-2',
+                    'class' => 'ml-2 mt-4 ',
                 ]
             ])
             ->add('Remplissage', TextType::class, [
+                'label' => false,
                 'attr' => [
-                    'placeholder' => "Libellé de la gamme",
+                    'placeholder' => "Type de remplissage",
                     'class' => 'form-control mt-2',
                 ]
             ])
@@ -75,15 +94,15 @@ class ModulesType extends AbstractType
                 'entry_type' => MontantsType::class,
                 'entry_options' => [
                     'attr' => ['class' => 'libelle_montant'],
+                    'label' => 'Gamme'
                 ],
             ])
-            ->add('Huisseries', EntityType::class, [
-                'class' => Huisserie::class,
-                'choice_label' => 'libelle_huisserie',
-            ])
-            ->add('Gammes', EntityType::class, [
-                'class' => Gammes::class,
-                'choice_label' => 'libelle_gamme',
+            ->add('Huisseries', CollectionType::class, [
+                'entry_type' =>HuisserieType::class,
+                'entry_options' => [
+                    'attr' => ['class' => 'libelle_huisserie'],
+                    'label' => 'Huisserie'
+                ],
             ])
         ;
     }

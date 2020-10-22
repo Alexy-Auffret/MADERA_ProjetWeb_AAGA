@@ -3,8 +3,7 @@
         {{ form_widget(form) }}
     </div>
     <div class="card-footer bg-perso">
-        <button class="d-inline-block btn btn-success">{{ button_label|default('Save') }}</button>
-        <a class="d-inline-block btn btn-secondary ml-3" href="{{ path('fournisseurs_index') }}">Retour</a>
-
+        <button class="d-inline-block btn btn-success"><i class="fas fa-check"></i> {{ button_label|default('Save') }}</button>
+        <a class="d-inline-block btn btn-secondary ml-3" href="{{ path('fournisseurs_index') }}"><i class="fas fa-arrow-left"></i> Retour</a>
     </div>
 {{ form_end(form) }}

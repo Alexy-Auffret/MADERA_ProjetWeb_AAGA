@@ -3,33 +3,39 @@
 {% block title %}Sections index{% endblock %}
 
 {% block body %}
-    <h1>Sections index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Libelle_section</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for section in sections %}
-            <tr>
-                <td>{{ section.id }}</td>
-                <td>{{ section.libelleSection }}</td>
-                <td>
-                    <a href="{{ path('sections_show', {'id': section.id}) }}">show</a>
-                    <a href="{{ path('sections_edit', {'id': section.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('sections_new') }}">Create new</a>
+<div class="row">
+    <div class="card col-md-8 offset-2 mt-3 p-0">
+        <div class="card-header bg-perso text-white">
+            <h1>Sections index</h1>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Libelle_section</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for section in sections %}
+                    <tr>
+                        <td>{{ section.id }}</td>
+                        <td>{{ section.libelleSection }}</td>
+                        <td>
+                            <a class="fas fa-eye " href="{{ path('sections_show', {'id': section.id}) }}"></a>
+                            <a class="fas fa-edit text-warning" href="{{ path('sections_edit', {'id': section.id}) }}"></a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer bg-perso">
+            <a class="btn btn-success" href="{{ path('sections_new') }}"><i class="fas fa-plus"></i> Ajouter une section</a>
+        </div>
 {% endblock %}

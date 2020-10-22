@@ -3,9 +3,12 @@
 {% block title %}New Sections{% endblock %}
 
 {% block body %}
-    <h1>Create new Sections</h1>
-
-    {{ include('sections/_form.html.twig') }}
-
-    <a href="{{ path('sections_index') }}">back to list</a>
+<div class="container">
+    <div class="col-md-12  card mt-2 p-0">
+        <div class="card-header bg-perso text-white">
+            <h1>Create new Sections</h1>
+        </div>
+        {{ include('sections/_form.html.twig') }}
+    </div>
+</div>
 {% endblock %}

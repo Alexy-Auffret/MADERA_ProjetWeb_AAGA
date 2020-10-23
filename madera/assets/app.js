@@ -9,7 +9,7 @@ Vue.use(BootstrapVueIcons);
 Vue.use(NavbarPlugin)
 
 import App from './js/App.vue'
-
+//création du component App lié à la vue App.vue
 new Vue({
     el: "#app",
     components : {App},

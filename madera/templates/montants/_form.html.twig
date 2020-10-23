@@ -2,14 +2,7 @@
     <div class="card-body">
         <h2>Informations montant</h2>
         {{ form_row(form.libelle_montant, {'label':false}) }}
-        <ul>
-            {% for composantField in form.composants %}
-                <li>
-                    {{ form_errors(composantField) }}
-                    {{ form_widget(composantField.libelle_composant) }}
-                </li>
-            {% endfor %}
-        </ul>
+        {{ form_row(form.composants) }}
     </div>
     <div class="card-footer bg-perso">
         <button class="d-inline-block btn btn-success"><i class="fas fa-check"></i> {{ button_label|default('Créer') }}</button>

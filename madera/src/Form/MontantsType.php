@@ -26,11 +26,8 @@ class MontantsType extends AbstractType
                 ]
             ])
             ->add('composants',CollectionType::class,[
-                'entry_type'=> ComposantsType::class,
-                'entry_options' => [
+                'entry_type'=>ComposantsType::class,
 
-                    'attr' => ['class' => 'libelle_composant'],
-                ]
             ])
         ;
     }

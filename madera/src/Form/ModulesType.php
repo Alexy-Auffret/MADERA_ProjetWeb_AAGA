@@ -77,27 +77,27 @@ class ModulesType extends AbstractType
                     'class' => 'ml-2 mt-4 ',
                 ]
             ])
-            ->add('Remplissage', TextType::class, [
+            ->add('remplissage', TextType::class, [
                 'label' => false,
                 'attr' => [
                     'placeholder' => "Type de remplissage",
                     'class' => 'form-control mt-2',
                 ]
             ])
-            ->add('Sections', CollectionType::class, [
+            ->add('sections', CollectionType::class, [
                 'entry_type' => SectionsType::class,
                 'entry_options' => [
                     'attr' => ['class' => 'libelle_section'],
                 ],
             ])
-            ->add('Montants', CollectionType::class, [
+            ->add('montants', CollectionType::class, [
                 'entry_type' => MontantsType::class,
                 'entry_options' => [
                     'attr' => ['class' => 'libelle_montant'],
                     'label' => 'Gamme'
                 ],
             ])
-            ->add('Huisseries', CollectionType::class, [
+            ->add('huisseries', CollectionType::class, [
                 'entry_type' =>HuisserieType::class,
                 'entry_options' => [
                     'attr' => ['class' => 'libelle_huisserie'],

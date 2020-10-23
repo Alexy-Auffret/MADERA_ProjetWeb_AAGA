@@ -19,22 +19,20 @@ class MontantsRepository extends ServiceEntityRepository
         parent::__construct($registry, Montants::class);
     }
 
-    // /**
-    //  * @return Montants[] Returns an array of Montants objects
-    //  */
-    /*
-    public function findByExampleField($value)
+     /**
+      * @return Montants[] Retourne une collection de Montants filtrés sur les familles de composants
+      */
+
+    public function findByMontantsByComposantFamily($value)
     {
         return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
+            ->andWhere('m.composants.famille_id = :val')
             ->setParameter('val', $value)
             ->orderBy('m.id', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Montants

@@ -1,7 +1,54 @@
 {{ form_start(form) }}
 <div class="card-body">
-    {{ form_widget(form) }}
-    
+    {{ form_row(form.Gammes) }}
+    {{ form_errors(form.Gammes) }}
+    {{ form_row(form.libelle_module) }}
+    {{ form_errors(form.libelle_module) }}
+    {{ form_row(form.hauteur_module) }}
+    {{ form_errors(form.hauteur_module) }}
+    {{ form_row(form.longueur_module) }}
+    {{ form_errors(form.longueur_module) }}
+    {{ form_row(form.plan_coupe) }}
+    {{ form_errors(form.plan_coupe) }}
+    {{ form_row(form.parametre_prix) }}
+    {{ form_errors(form.parametre_prix) }}
+    {{ form_row(form.cctp) }}
+    {{ form_errors(form.cctp) }}
+    {{ form_row(form.is_modele) }}
+    {{ form_errors(form.is_modele) }}
+    {{ form_row(form.remplissage) }}
+    {{ form_errors(form.remplissage) }}
+    {{ form_row(form.sections) }}
+    {{ form_errors(form.sections) }}
+    <ul>
+        {% for sectionsField in form.sections %}
+            <li>
+                {{ form_errors(sectionsField) }}
+                {{ form_widget(sectionsField) }}
+            </li>
+        {% endfor %}
+    </ul>
+    {{ form_row(form.montants) }}
+    {{ form_errors(form.montants) }}
+    <ul>
+    {% for montantsField in form.montants %}
+        <li>
+            {{ form_errors(montantsField) }}
+            {{ form_widget(montantsField) }}
+        </li>
+    {% endfor %}
+    </ul>
+    {{ form_row(form.huisseries) }}
+    {{ form_errors(form.huisseries) }}
+    <ul>
+        {% for huisseriesField in form.huisseries %}
+            <li>
+                {{ form_errors(huisseriesField) }}
+                {{ form_widget(huisseriesField) }}
+            </li>
+        {% endfor %}
+    </ul>
+
 </div>
 <div class="card-footer bg-perso">
     <button class="btn btn-success"><i class="fas fa-check"></i> {{ button_label|default('Save') }}</button>
